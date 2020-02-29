@@ -2,64 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e2f1675-c1e7-47ac-830b-b707a01878db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Command/Command.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Command/CommandHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/MessageBus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Query/Query.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Query/QueryHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Query/Viewable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/DecreaseWarehouseState/DecreaseWarehouseState.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/DecreaseWarehouseState/DecreaseWarehouseStateHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/EnterWarehouseState/EnterWarehouseState.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/EnterWarehouseState/EnterWarehouseStateHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/IncreaseWarehouseState/IncreaseWarehouseState.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/IncreaseWarehouseState/IncreaseWarehouseStateHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/WarehouseStateHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindAllWarehouse/FindAllWarehouse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindAllWarehouse/FindAllWarehouseHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindAllWarehouseItem/FindAllWarehouseItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindAllWarehouseItem/FindAllWarehouseItemHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindByWarehouseNameAndEan/FindByWarehouseNameAndEan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/FindByWarehouseNameAndEan/FindByWarehouseNameAndEanHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehouseItemView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehouseItemsView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehouseStateView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehouseStatesView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehouseView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/ReadModel/WarehousesView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/WarehouseQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Query/WarehouseQueryHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Enum/NameEnum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Persist/WarehouseStateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Service/WarehouseStateService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Valuing/Ean.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Valuing/Quantity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Warehouse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/WarehouseItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/WarehouseState.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Persist/WarehouseStateEloquentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Query/WarehouseEloquentQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Service/WarehouseStateMessagingService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Web/WarehouseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/warehouses.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Aggregate/AggregateChanged.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Aggregate/AggregateId.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Aggregate/AggregateRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Aggregate/AggregateRoot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Event/EventPublisher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Event/EventStorage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Event/EventStreamRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Snapshot/Snapshot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Snapshot/SnapshotRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Libraries/Messaging/Snapshot/SnapshotStorage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/DomainModel/Entity/EventStreamEntity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/DomainModel/Entity/SnapshotEntity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/DomainModel/Service/Serializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/Infrastructure/Service/CallbackSerializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/Infrastructure/Service/JsonSerializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/Integration/EventStreamEloquentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Message/Integration/SnapshotEloquentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Event/ExistingWarehouseStateQuantityDecreased.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Event/ExistingWarehouseStateQuantityIncreased.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Event/NewWarehouseStateCreated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Projection/WarehouseStateProjection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Valuing/Uuid.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Persist/WarehouseStateAggregateRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Projection/WarehouseStateEloquentProjector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Request/WarehouseStateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_29_130655_create_message_tables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/WarehouseStateTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/warehouses.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ean/Generator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ean/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Ean/Validator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enum/WarehouseNameEnum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/DecreaseWarehouseState/DecreaseWarehouseStateHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/DecreaseWarehouseState/DecreaseWarehouseStateHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/EnterWarehouseState/EnterWarehouseStateHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/EnterWarehouseState/EnterWarehouseStateHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/IncreaseWarehouseState/IncreaseWarehouseStateHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Application/Command/IncreaseWarehouseState/IncreaseWarehouseStateHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity/WarehouseStateEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity/WarehouseStateEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/WarehouseState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/WarehouseState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Persist/WarehouseStateEloquentRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Service/WarehouseStateMessagingService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Service/WarehouseStateMessagingService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Web/WarehouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Web/WarehouseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/WarehouseStateService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Warehouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity/WarehouseEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/WarehouseItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity/WarehouseItemEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/WarehouseState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity/WarehouseStateEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/WarehouseTablesSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warehouse/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warehouse/items.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/warehouse/states.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warehouse/states.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warehouse/warehouses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warehouse/warehouses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/warehouses.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/warehouses.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="cqrs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,15 +172,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/warehouse" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/warehouse" />
+      <recent name="$PROJECT_DIR$/app/Modules/Message/Infrastructure/Service" />
+      <recent name="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Event" />
+      <recent name="$PROJECT_DIR$/database/migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Modules/Message/Infrastructure/Service" />
+      <recent name="$PROJECT_DIR$/app/Modules/Message/DomainModel/Service" />
+      <recent name="$PROJECT_DIR$/app/Modules/Message/Integration" />
       <recent name="$PROJECT_DIR$/app/Modules/Warehouse/Application/Ean" />
       <recent name="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Web" />
-      <recent name="$PROJECT_DIR$/app/Modules/Warehouse/Application" />
-      <recent name="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure" />
-      <recent name="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Entity" />
     </key>
   </component>
   <component name="RunManager">
@@ -226,26 +217,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="798" y="271" width="431" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583000025335">
+    <state x="798" y="271" width="431" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583011133409">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="798" y="271" width="431" height="562" key="#com.intellij.ide.util.MemberChooser/61.27.1859.1053@61.27.1859.1053" timestamp="1583000025335" />
-    <state x="743" y="171" width="476" height="763" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582999342842">
+    <state x="798" y="271" width="431" height="562" key="#com.intellij.ide.util.MemberChooser/61.27.1859.1053@61.27.1859.1053" timestamp="1583011133409" />
+    <state x="743" y="171" width="476" height="763" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583007644445">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="743" y="171" width="476" height="763" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1582999342842" />
-    <state x="723" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583000415570">
+    <state x="743" y="171" width="476" height="763" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583007644445" />
+    <state x="723" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583012637338">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="723" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583000415570" />
-    <state x="626" y="370" width="1173" height="365" key="NewPhpClassDialog" timestamp="1582999356487">
+    <state x="723" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583012637338" />
+    <state x="626" y="370" width="1173" height="365" key="NewPhpClassDialog" timestamp="1583012633832">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="626" y="370" width="1173" height="365" key="NewPhpClassDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1582999356487" />
-    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog" timestamp="1582999690815">
+    <state x="626" y="370" width="1173" height="365" key="NewPhpClassDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583012633832" />
+    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog" timestamp="1583007930343">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1582999690815" />
+    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583007930343" />
     <state x="679" y="215" width="612" height="675" key="RollbackChangesDialog" timestamp="1583001703108">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
@@ -258,9 +249,9 @@
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
     <state x="654" y="253" key="run.anything.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1582991684363" />
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583001665513">
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583012812829">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1583001665513" />
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1583012812829" />
   </component>
 </project>

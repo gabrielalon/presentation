@@ -47,8 +47,6 @@ class WarehouseStateMessagingService implements WarehouseStateService
      */
     public function enter(WarehouseNameEnum $warehouseName, string $ean, int $quantity): void
     {
-        $this->messageBus->handle(new EnterWarehouseState($warehouseName, $ean));
-
         /** @var WarehouseStateView $warehouseState */
         $warehouseState = $this->messageBus->query(new FindByWarehouseNameAndEan($warehouseName, $ean));
 

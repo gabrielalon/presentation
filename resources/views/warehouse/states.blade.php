@@ -23,6 +23,7 @@
                                 <th scope="col">{{ __('Increase') }}:</th>
                                 <th scope="col">{{ __('Decrease') }}:</th>
                                 <th scope="col">{{ __('Enter') }}:</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -78,6 +79,11 @@
                                                 </div>
                                             </div>
                                         </form>
+                                    </td>
+                                    <td>
+                                        <a class="badge badge-light" href="{{ route('warehouse.state.show', ['ean' => $ean, 'name' => $warehouse->name()]) }}">
+                                            <span class="oi oi-magnifying-glass"></span>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

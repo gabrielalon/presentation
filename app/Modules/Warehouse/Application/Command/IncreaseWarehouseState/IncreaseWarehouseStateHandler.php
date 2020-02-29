@@ -12,11 +12,9 @@ class IncreaseWarehouseStateHandler extends WarehouseStateHandler
      */
     public function run(Command $command): void
     {
-        $model = $this->repository->find($command->uuid());
+        $warehouseState = $this->repository->find($command->uuid());
+        $warehouseState->increaseQuantity($command->changeBy());
 
-        $newQuantity = $model->quantity() + $command->changeBy();
-        $model->setQuantity($newQuantity);
-
-        $this->repository->save($model);
+        $this->repository->save($warehouseState);
     }
 }

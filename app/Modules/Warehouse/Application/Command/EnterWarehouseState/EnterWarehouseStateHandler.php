@@ -4,8 +4,8 @@ namespace App\Modules\Warehouse\Application\Command\EnterWarehouseState;
 
 use App\Libraries\Messaging\Command\Command;
 use App\Modules\Warehouse\Application\Command\WarehouseStateHandler;
-use App\Modules\Warehouse\DomainModel\Enum\NameEnum;
 use App\Modules\Warehouse\DomainModel\WarehouseState;
+use Ramsey\Uuid\Uuid;
 
 class EnterWarehouseStateHandler extends WarehouseStateHandler
 {
@@ -14,10 +14,10 @@ class EnterWarehouseStateHandler extends WarehouseStateHandler
      */
     public function run(Command $command): void
     {
-        $model = new WarehouseState(
-            new NameEnum($command->warehouseName()),
+        $this->repository->save(WarehouseState::createNew(
+            Uuid::uuid4(),
+            $command->warehouseName(),
             $command->ean()
-        );
-        $this->repository->save($model);
+        ));
     }
 }
