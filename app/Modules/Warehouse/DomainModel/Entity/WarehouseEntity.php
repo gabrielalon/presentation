@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Modules\Warehouse\DomainModel\Entity;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property Collection $states
  */
-class Warehouse extends Model
+class WarehouseEntity extends Model
 {
     use SoftDeletes;
 
@@ -43,6 +43,6 @@ class Warehouse extends Model
      */
     public function states(): HasMany
     {
-        return $this->hasMany(WarehouseState::class, 'warehouse_uuid', 'uuid');
+        return $this->hasMany(WarehouseStateEntity::class, 'warehouse_uuid', 'uuid');
     }
 }

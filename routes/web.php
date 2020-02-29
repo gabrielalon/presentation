@@ -21,7 +21,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/warehouse/warehouses', 'WarehouseController@warehouses')->name('warehouse.list');
-Route::get('/warehouse/items', 'WarehouseController@items')->name('warehouse.item.list');
-Route::get('/warehouse/states/{ean}', 'WarehouseController@states')->name('warehouse.state.list');
-Route::post('/warehouse/states/{name}/{ean}', 'WarehouseController@store')->name('warehouse.state.store');

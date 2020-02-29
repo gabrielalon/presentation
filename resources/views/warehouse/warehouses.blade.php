@@ -17,10 +17,10 @@
                         @php ($i = 1)
                         <table class="table ">
                             <tbody>
-                            @foreach ($warehouses as $warehouse)
+                            @foreach ($warehouses->all() as $warehouse)
                             <tr>
                                 <td scope="row">{{ $i++ }}</td>
-                                <td>{{$warehouse->name}}</td>
+                                <td>{{$warehouse->name()}}</td>
                             </tr>
                             @endforeach
                             </tbody>

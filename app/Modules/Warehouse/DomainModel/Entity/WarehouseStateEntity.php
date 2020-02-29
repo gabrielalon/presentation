@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Modules\Warehouse\DomainModel\Entity;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $item_uuid
  * @property integer $quantity
  *
- * @property Warehouse $warehouse
- * @property WarehouseItem $item
+ * @property WarehouseEntity $warehouse
+ * @property WarehouseItemEntity $item
  */
-class WarehouseState extends Model
+class WarehouseStateEntity extends Model
 {
     /** @var string */
     protected $table = 'warehouse_state';
@@ -44,7 +44,7 @@ class WarehouseState extends Model
      */
     public function warehouse(): BelongsTo
     {
-        return $this->belongsTo(Warehouse::class, 'uuid', 'warehouse_uuid');
+        return $this->belongsTo(WarehouseEntity::class, 'warehouse_uuid', 'uuid');
     }
 
     /**
@@ -52,6 +52,7 @@ class WarehouseState extends Model
      */
     public function item(): BelongsTo
     {
-        return $this->belongsTo(WarehouseItem::class, 'uuid', 'warehouse_uuid');
+        return $this->belongsTo(WarehouseItemEntity::class, 'item_uuid', 'uuid');
     }
 }
+

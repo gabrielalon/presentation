@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ean;
+namespace App\Modules\Warehouse\Application\Ean;
 
 class Validator
 {
@@ -51,5 +51,19 @@ class Validator
     private function has13Numbers(array $ean): bool
     {
         return count($ean) === 13;
+    }
+
+    /**
+     * @param string $ean
+     * @throws \InvalidArgumentException
+     */
+    public function assertEan(string $ean): void
+    {
+        if (false === $this->isValid($ean)) {
+            throw new \InvalidArgumentException(\sprintf(
+                'Provided ean is not valid: %s',
+                $ean
+            ));
+        }
     }
 }

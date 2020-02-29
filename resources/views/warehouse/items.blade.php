@@ -17,12 +17,12 @@
                         @php ($i = 1)
                         <table class="table ">
                             <tbody>
-                            @foreach ($items as $item)
+                            @foreach ($items->all() as $item)
                                 <tr>
                                     <td scope="row">{{ $i++ }}</td>
-                                    <td>{{$item->ean}}</td>
+                                    <td>{{$item->ean()}}</td>
                                     <td>
-                                        <a class="badge badge-info" href="{{ route('warehouse.state.list', ['ean' => $item->ean]) }}">
+                                        <a class="badge badge-light" href="{{ route('warehouse.state.list', ['ean' => $item->ean()]) }}">
                                             <span class="oi oi-magnifying-glass"></span>
                                         </a>
                                     </td>
