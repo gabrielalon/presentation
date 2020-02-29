@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
+ * @property string $uuid
  * @property string $warehouse_uuid
  * @property string $item_uuid
  * @property integer $quantity
@@ -32,6 +33,7 @@ class WarehouseState extends Model
 
     /** @var string[]  */
     protected $fillable = [
+        'uuid',
         'warehouse_uuid',
         'item_uuid',
         'quantity'

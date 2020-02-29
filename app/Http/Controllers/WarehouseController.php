@@ -63,6 +63,7 @@ class WarehouseController extends Controller
      * @param string $ean
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function store(string $name, string $ean, Request $request)
     {
@@ -70,6 +71,6 @@ class WarehouseController extends Controller
 
         return redirect()->action('WarehouseController@states', ['ean' => $ean])
             ->with('success', 'Warehouse state sored.')
-            ;
+        ;
     }
 }

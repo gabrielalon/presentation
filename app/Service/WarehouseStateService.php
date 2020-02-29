@@ -6,6 +6,7 @@ use App\Enum\WarehouseNameEnum;
 use App\Warehouse;
 use App\WarehouseItem;
 use App\WarehouseState;
+use Ramsey\Uuid\Uuid;
 
 class WarehouseStateService
 {
@@ -13,6 +14,7 @@ class WarehouseStateService
      * @param WarehouseNameEnum $warehouseName
      * @param string $ean
      * @param int $quantity
+     * @throws \Exception
      */
     public function increase(WarehouseNameEnum $warehouseName, string $ean, int $quantity): void
     {
@@ -23,6 +25,7 @@ class WarehouseStateService
      * @param WarehouseNameEnum $warehouseName
      * @param string $ean
      * @param int $quantity
+     * @throws \Exception
      */
     public function decrease(WarehouseNameEnum $warehouseName, string $ean, int $quantity): void
     {
@@ -33,6 +36,7 @@ class WarehouseStateService
      * @param WarehouseNameEnum $warehouseName
      * @param string $ean
      * @param int $quantity
+     * @throws \Exception
      */
     public function enter(WarehouseNameEnum $warehouseName, string $ean, int $quantity): void
     {
@@ -53,6 +57,7 @@ class WarehouseStateService
      * @param WarehouseNameEnum $warehouseName
      * @param string $ean
      * @param int $changeBy
+     * @throws \Exception
      */
     private function change(WarehouseNameEnum $warehouseName, string $ean, int $changeBy): void
     {
@@ -65,6 +70,7 @@ class WarehouseStateService
      * @param WarehouseNameEnum $warehouseName
      * @param string $ean
      * @return WarehouseState
+     * @throws \Exception
      */
     private function retrieveWarehouseState(WarehouseNameEnum $warehouseName, string $ean): WarehouseState
     {
@@ -76,7 +82,10 @@ class WarehouseStateService
         $which = ['warehouse_uuid' => $warehouse->uuid, 'item_uuid' => $warehouseItem->uuid];
 
         /** @var WarehouseState $warehouseState */
-        $warehouseState = WarehouseState::query()->firstOrNew($which, ['quantity' => 0]);
+        $warehouseState = WarehouseState::query()->firstOrNew($which, [
+            'uuid' => Uuid::uuid4()->toString(),
+            'quantity' => 0
+        ]);
 
         return $warehouseState;
     }
@@ -85,6 +94,7 @@ class WarehouseStateService
      * @param string $warehouseName
      * @param string $ean
      * @return int
+     * @throws \Exception
      */
     public function warehouseState(string $warehouseName, string $ean): int
     {

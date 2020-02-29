@@ -24,7 +24,7 @@ class WarehouseTablesSeeder extends \Illuminate\Database\Seeder
             'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
         ]);
 
-        for ($i = 1; $i < 50; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $ean = \App\Ean\Generator::unique();
 
             \App\WarehouseItem::query()->updateOrInsert(['ean' => $ean], ['uuid' => \Ramsey\Uuid\Uuid::uuid4(),]);

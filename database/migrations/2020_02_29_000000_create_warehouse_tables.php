@@ -26,11 +26,12 @@ class CreateWarehouseTables extends Migration
         });
 
         Schema::create('warehouse_state', function (Blueprint $table) {
+            $table->uuid('uuid')->primary();
             $table->uuid('warehouse_uuid');
             $table->uuid('item_uuid');
             $table->unsignedInteger('quantity');
 
-            $table->primary(['warehouse_uuid', 'item_uuid'], 'warehouse_item');
+            $table->unique(['warehouse_uuid', 'item_uuid'], 'warehouse_item');
             $table->foreign('warehouse_uuid')->references('uuid')->on('warehouse');
             $table->foreign('item_uuid')->references('uuid')->on('warehouse_item');
         });
