@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e2f1675-c1e7-47ac-830b-b707a01878db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/apache/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/apache/presentation.apache.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/mysql/dump/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/conf.d/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/conf.d/xdebug.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/warehouse/events.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shell.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/images.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/Warehouse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/DomainModel/WarehouseItem.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Service/WarehouseStateMessagingService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/Infrastructure/Service/WarehouseStateMessagingService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Request/WarehouseStateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/UI/Request/WarehouseStateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/Warehouse/Presentation/UI/Web/WarehouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/Warehouse/UI/Web/WarehouseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/WarehouseStateTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/WarehouseStateTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,10 +242,10 @@
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
     <state x="626" y="370" width="1173" height="365" key="NewPhpClassDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583012633832" />
-    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog" timestamp="1583693799984">
+    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog" timestamp="1583695535136">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583693799984" />
+    <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583695535136" />
     <state x="679" y="215" width="612" height="675" key="RollbackChangesDialog" timestamp="1583001703108">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
@@ -272,9 +258,9 @@
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
     <state x="654" y="253" key="run.anything.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1582991684363" />
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583695335903">
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583695463892">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1583695335903" />
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1583695463892" />
   </component>
 </project>
