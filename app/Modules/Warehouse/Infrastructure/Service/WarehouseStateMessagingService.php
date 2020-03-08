@@ -4,7 +4,6 @@ namespace App\Modules\Warehouse\Infrastructure\Service;
 
 use App\Libraries\Messaging\MessageBus;
 use App\Modules\Warehouse\Application\Command\DecreaseWarehouseState\DecreaseWarehouseState;
-use App\Modules\Warehouse\Application\Command\EnterWarehouseState\EnterWarehouseState;
 use App\Modules\Warehouse\Application\Command\IncreaseWarehouseState\IncreaseWarehouseState;
 use App\Modules\Warehouse\Application\Query\FindByWarehouseNameAndEan\FindByWarehouseNameAndEan;
 use App\Modules\Warehouse\Application\Query\ReadModel\WarehouseStateView;

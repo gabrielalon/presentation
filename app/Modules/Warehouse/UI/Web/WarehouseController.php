@@ -1,49 +1,46 @@
 <?php
 
-namespace App\Modules\Warehouse\Presentation\UI\Web;
+namespace App\Modules\Warehouse\UI\Web;
 
 use App\Http\Controllers\Controller;
 use App\Libraries\Messaging\Event\EventStorage;
 use App\Libraries\Messaging\MessageBus;
+use App\Modules\Message\DomainModel\Entity\EventStreamEntity;
+use App\Modules\Message\DomainModel\Service\Serializer;
 use App\Modules\Warehouse\Application\Query\FindAllWarehouse\FindAllWarehouse;
 use App\Modules\Warehouse\Application\Query\FindAllWarehouseItem\FindAllWarehouseItem;
 use App\Modules\Warehouse\Application\Query\FindByWarehouseNameAndEan\FindByWarehouseNameAndEan;
 use App\Modules\Warehouse\Application\Query\ReadModel\WarehouseStateView;
 use App\Modules\Warehouse\DomainModel\Enum\NameEnum;
 use App\Modules\Warehouse\DomainModel\Service\WarehouseStateService;
-use App\Modules\Warehouse\DomainModel\Valuing\Uuid;
-use App\Modules\Warehouse\DomainModel\WarehouseState;
-use App\Modules\Warehouse\Presentation\UI\Request\WarehouseStateRequest;
+use App\Modules\Warehouse\UI\Request\WarehouseStateRequest;
 use Illuminate\Contracts;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class WarehouseController extends Controller
 {
+    /** @var Serializer */
+    private $serializer;
+
     /** @var MessageBus */
     private $messageBus;
-
-    /** @var EventStorage */
-    private $eventStorage;
 
     /** @var WarehouseStateService */
     private $warehouseStateService;
 
     /**
      * WarehouseController constructor.
+     * @param Serializer $serializer
      * @param MessageBus $messageBus
-     * @param EventStorage $eventStorage
      * @param WarehouseStateService $warehouseStateService
      */
-    public function __construct(
-        MessageBus $messageBus,
-        EventStorage $eventStorage,
-        WarehouseStateService $warehouseStateService
-    ) {
+    public function __construct(Serializer $serializer, MessageBus $messageBus, WarehouseStateService $warehouseStateService)
+    {
         $this->middleware('auth');
 
+        $this->serializer = $serializer;
         $this->messageBus = $messageBus;
-        $this->eventStorage = $eventStorage;
         $this->warehouseStateService = $warehouseStateService;
     }
 
@@ -83,17 +80,23 @@ class WarehouseController extends Controller
     /**
      * @param string $name
      * @param string $ean
+     * @return Contracts\View\Factory|View
      */
-    public function state(string $name, string $ean): void
+    public function state(string $name, string $ean)
     {
         /** @var WarehouseStateView $warehouseState */
         $warehouseState = $this->messageBus->query(new FindByWarehouseNameAndEan(new NameEnum($name), $ean));
-        $aggregateId = Uuid::fromString($warehouseState->uuid());
 
-        $warehouseState = WarehouseState::reconstituteFromHistory($this->eventStorage->load($aggregateId, 0));
+        $collection = EventStreamEntity::query()
+            ->where(['event_uuid' => $warehouseState->uuid()])
+            ->where('version', '>=', 0)
+            ->get();
 
-        dd($warehouseState);
-        die;
+        return view('warehouse.events', [
+            'warehouseState' => $warehouseState,
+            'serializer' => $this->serializer,
+            'events' => $collection
+        ]);
     }
 
     /**
