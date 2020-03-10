@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Warehouse\Presentation\UI\Web;
+namespace App\Modules\Warehouse\UI\Web;
 
 use App\Http\Controllers\Controller;
 use App\Libraries\Messaging\MessageBus;
