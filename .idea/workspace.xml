@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="874058a2-891b-4fd8-88de-6ee31ba6c454" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WarehouseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/WarehouseStateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/WarehouseStateService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/WarehouseState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/WarehouseState.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_29_000000_create_warehouse_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_29_000000_create_warehouse_tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/WarehouseTablesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/WarehouseTablesSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,13 +185,17 @@
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
     <state x="804" y="479" width="363" height="147" key="NewPhpFileDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1582987091455" />
+    <state x="632" y="215" width="707" height="675" key="RollbackChangesDialog" timestamp="1583820252035">
+      <screen x="61" y="27" width="1859" height="1053" />
+    </state>
+    <state x="632" y="215" width="707" height="675" key="RollbackChangesDialog/61.27.1859.1053@61.27.1859.1053" timestamp="1583820252035" />
     <state x="654" y="253" key="run.anything.popup" timestamp="1582991684363">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
     <state x="654" y="253" key="run.anything.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1582991684363" />
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1582993825652">
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583820259908">
       <screen x="61" y="27" width="1859" height="1053" />
     </state>
-    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1582993825652" />
+    <state x="653" y="257" width="672" height="678" key="search.everywhere.popup/61.27.1859.1053@61.27.1859.1053" timestamp="1583820259908" />
   </component>
 </project>
