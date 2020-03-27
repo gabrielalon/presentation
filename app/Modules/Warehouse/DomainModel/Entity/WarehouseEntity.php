@@ -44,7 +44,7 @@ class WarehouseEntity extends Model
      */
     public function getNameAttribute(): NameEnum
     {
-        return new NameEnum($this->name);
+        return new NameEnum($this->attributes['name']);
     }
 
     /**
