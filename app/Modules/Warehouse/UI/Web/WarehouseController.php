@@ -112,7 +112,7 @@ class WarehouseController extends Controller
 
         return redirect()->route('warehouse.state.list', ['ean' => $ean])
             ->with('success', 'Warehouse state sored.')
-            ;
+        ;
     }
 
     /**
