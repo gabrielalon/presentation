@@ -21,10 +21,10 @@ class WarehouseStateEloquentProjector implements WarehouseStateProjection
         $warehouseItem = WarehouseItemEntity::query()->where(['ean' => $event->warehouseStateEan()->toString()])->firstOrFail();
 
         $which = ['warehouse_uuid' => $warehouse->uuid, 'item_uuid' => $warehouseItem->uuid];
-        WarehouseStateEntity::query()->updateOrInsert($which, [
-            'uuid' => $event->aggregateId(),
-            'quantity' => $event->warehouseStateQuantity()->toInteger()
-        ]);
+        /** @var WarehouseStateEntity $state */
+        $state = WarehouseStateEntity::query()->firstOrNew($which, ['uuid' => $event->aggregateId()]);
+        $state->quantity = $event->warehouseStateQuantity()->toInteger();
+        $state->save();
     }
 
     /**
