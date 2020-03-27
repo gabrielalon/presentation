@@ -2,6 +2,7 @@
 
 namespace App\Modules\Warehouse\DomainModel\Entity;
 
+use App\Modules\Warehouse\DomainModel\Enum\NameEnum;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property string $uuid
- * @property string $name
+ * @property NameEnum $name
  *
  * @property Collection $states
  */
@@ -37,6 +38,14 @@ class WarehouseEntity extends Model
         'uuid',
         'name'
     ];
+
+    /**
+     * @return NameEnum
+     */
+    public function getNameAttribute(): NameEnum
+    {
+        return new NameEnum($this->name);
+    }
 
     /**
      * @return HasMany

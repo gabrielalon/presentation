@@ -20,7 +20,7 @@ class WarehouseStateEloquentRepository implements Persist\WarehouseStateReposito
         /** @var WarehouseStateEntity $entity */
         $entity = WarehouseStateEntity::query()->where(['uuid' => $uuid])->firstOrFail();
 
-        $warehouseState = new WarehouseState(new NameEnum($entity->warehouse->name), $entity->item->ean);
+        $warehouseState = new WarehouseState($entity->warehouse->name, $entity->item->ean);
         $warehouseState->setQuantity($entity->quantity);
 
         return $warehouseState;

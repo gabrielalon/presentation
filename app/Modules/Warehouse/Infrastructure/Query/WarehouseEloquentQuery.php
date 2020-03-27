@@ -24,7 +24,7 @@ class WarehouseEloquentQuery implements WarehouseQuery
 
         /** @var WarehouseEntity $entity */
         foreach (WarehouseEntity::all() as $entity) {
-            $collection->add(new WarehouseView($entity->uuid, $entity->name));
+            $collection->add(new WarehouseView($entity->uuid, $entity->name->getValue()));
         }
 
         return $collection;

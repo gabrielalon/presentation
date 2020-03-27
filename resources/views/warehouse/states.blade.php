@@ -23,6 +23,7 @@
                                 <th scope="col">{{ __('Increase') }}:</th>
                                 <th scope="col">{{ __('Decrease') }}:</th>
                                 <th scope="col">{{ __('Enter') }}:</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
