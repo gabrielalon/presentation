@@ -10,10 +10,9 @@ use App\Modules\Warehouse\Application\Query\FindByWarehouseNameAndEan\FindByWare
 use App\Modules\Warehouse\Application\Query\ReadModel\WarehouseStateView;
 use App\Modules\Warehouse\DomainModel\Enum\NameEnum;
 use App\Modules\Warehouse\DomainModel\Service\WarehouseStateService;
-use Illuminate\Contracts;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class WarehouseController extends Controller
 {
@@ -37,9 +36,9 @@ class WarehouseController extends Controller
     }
 
     /**
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function warehouses()
+    public function warehouses(): Renderable
     {
         return view('warehouse.warehouses', [
             'warehouses' => $this->messageBus->query(new FindAllWarehouse())
@@ -47,9 +46,9 @@ class WarehouseController extends Controller
     }
 
     /**
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function items()
+    public function items(): Renderable
     {
         return view('warehouse.items', [
             'items' => $this->messageBus->query(new FindAllWarehouseItem())
@@ -58,9 +57,9 @@ class WarehouseController extends Controller
 
     /**
      * @param string $ean
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function states(string $ean)
+    public function states(string $ean): Renderable
     {
         return view('warehouse.states', [
             'ean' => $ean,

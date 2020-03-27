@@ -37,9 +37,9 @@ class WarehouseStateEloquentRepository implements Persist\WarehouseStateReposito
         $warehouseItem = WarehouseItemEntity::query()->where(['ean' => $model->ean()])->firstOrFail();
 
         $which = ['warehouse_uuid' => $warehouse->uuid, 'item_uuid' => $warehouseItem->uuid];
-        WarehouseStateEntity::query()->updateOrInsert($which, [
-            'uuid' => Uuid::uuid4()->toString(),
-            'quantity' => $model->quantity()
-        ]);
+        /** @var WarehouseStateEntity $state */
+        $state = WarehouseStateEntity::query()->firstOrNew($which, ['uuid' => Uuid::uuid4()->toString()]);
+        $state->quantity = $model->quantity();
+        $state->save();
     }
 }

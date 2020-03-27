@@ -80,11 +80,7 @@
                                             </div>
                                         </form>
                                     </td>
-                                    <td>
-                                        <a class="badge badge-light" href="{{ route('warehouse.state.show', ['ean' => $ean, 'name' => $warehouse->name()]) }}">
-                                            <span class="oi oi-magnifying-glass"></span>
-                                        </a>
-                                    </td>
+                                    <td></td>
                                 </tr>
                             @endforeach
                             </tbody>

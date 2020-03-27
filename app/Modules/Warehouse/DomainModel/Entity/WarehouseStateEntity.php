@@ -20,7 +20,7 @@ class WarehouseStateEntity extends Model
     protected $table = 'warehouse_state';
 
     /** @var string */
-    protected $primaryKey = 'warehouse_uuid';
+    protected $primaryKey = 'uuid';
 
     /** @var bool */
     public $incrementing = false;
