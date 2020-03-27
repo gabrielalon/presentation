@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Enum\WarehouseNameEnum;
+use App\Request\WarehouseStateRequest;
 use App\Service\WarehouseStateService;
 use App\Warehouse;
 use App\WarehouseItem;
-use Illuminate\Contracts;
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class WarehouseController extends Controller
 {
@@ -26,9 +27,9 @@ class WarehouseController extends Controller
     }
 
     /**
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function warehouses()
+    public function warehouses(): Renderable
     {
         return view('warehouse.warehouses', [
             'warehouses' => Warehouse::all()
@@ -36,9 +37,9 @@ class WarehouseController extends Controller
     }
 
     /**
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function items()
+    public function items(): Renderable
     {
         return view('warehouse.items', [
             'items' => WarehouseItem::all()
@@ -47,9 +48,9 @@ class WarehouseController extends Controller
 
     /**
      * @param string $ean
-     * @return Contracts\View\Factory|View
+     * @return Renderable
      */
-    public function states(string $ean)
+    public function states(string $ean): Renderable
     {
         return view('warehouse.states', [
             'ean' => $ean,
@@ -62,15 +63,47 @@ class WarehouseController extends Controller
      * @param string $name
      * @param string $ean
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      * @throws \Exception
      */
-    public function store(string $name, string $ean, Request $request)
+    public function store(string $name, string $ean, Request $request): RedirectResponse
     {
         $this->warehouseStateService->enter(new WarehouseNameEnum($name), $ean, $request->input('quantity'));
 
         return redirect()->action('WarehouseController@states', ['ean' => $ean])
             ->with('success', 'Warehouse state sored.')
+        ;
+    }
+
+    /**
+     * @param string $name
+     * @param string $ean
+     * @param WarehouseStateRequest $request
+     * @return RedirectResponse
+     * @throws \Exception
+     */
+    public function increase(string $name, string $ean, WarehouseStateRequest $request): RedirectResponse
+    {
+        $this->warehouseStateService->increase(new WarehouseNameEnum($name), $ean, $request->get('quantity'));
+
+        return redirect()->route('warehouse.state.list', ['ean' => $ean])
+            ->with('success', 'Warehouse state increased.')
+        ;
+    }
+
+    /**
+     * @param string $name
+     * @param string $ean
+     * @param WarehouseStateRequest $request
+     * @return RedirectResponse
+     * @throws \Exception
+     */
+    public function decrease(string $name, string $ean, WarehouseStateRequest $request): RedirectResponse
+    {
+        $this->warehouseStateService->decrease(new WarehouseNameEnum($name), $ean, $request->get('quantity'));
+
+        return redirect()->route('warehouse.state.list', ['ean' => $ean])
+            ->with('success', 'Warehouse state decreased.')
         ;
     }
 }
