@@ -1,45 +1,22 @@
 <?php
 
-use App\Modules\Warehouse\Application\Command\EnterWarehouseState\EnterWarehouseState;
 use App\Modules\Warehouse\Application\Ean;
 use App\Modules\Warehouse\DomainModel\Enum\NameEnum;
-use App\Modules\Warehouse\DomainModel\Entity\WarehouseEntity;
 use App\Modules\Warehouse\DomainModel\Entity\WarehouseItemEntity;
-use App\Modules\Warehouse\DomainModel\Service\WarehouseStateService;
-use App\Libraries\Messaging\MessageBus;
 use Illuminate\Database\Seeder;
+use Ramsey\Uuid\Uuid;
 
-class WarehouseStateTableSeeder extends Seeder
+class WarehouseItemsSeeder extends Seeder
 {
     /**
-     * @param WarehouseStateService $service
-     * @param MessageBus $bus
      * @throws Exception
      */
-    public function run(WarehouseStateService $service, MessageBus $bus): void
+    public function run(): void
     {
-        /** @var NameEnum $name */
-        foreach (NameEnum::values() as $name) {
-            $warehouse = new WarehouseEntity([
-                'uuid' => \Ramsey\Uuid\Uuid::uuid4()->toString(),
-                'name' => $name->getValue()
-            ]);
-            $warehouse->save();
-        }
-
         foreach (range(1, 50) as $i) {
-
-            $item = new WarehouseItemEntity([
-                'uuid' => \Ramsey\Uuid\Uuid::uuid4()->toString(),
-                'ean' => $this->uniqueEAN()
-            ]);
-            $item->save();
-
-            /** @var NameEnum $name */
-            foreach (NameEnum::values() as $name) {
-                $bus->handle(new EnterWarehouseState($name, $item->ean));
-                $service->enter($name, $item->ean, random_int(1, 10));
-            }
+            $data = ['uuid' => Uuid::uuid4()->toString()];
+            $where = ['ean' => $this->uniqueEAN()];
+            WarehouseItemEntity::query()->updateOrCreate($where, $data);
         }
     }
 
